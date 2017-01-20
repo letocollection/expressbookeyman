@@ -6,12 +6,7 @@ var ReactRouter = require('react-router')
 router.get('*', function(request, response) {
 	var props = { title: 'The Bookeyman App' };
 	ReactRouter.match({
-		routes: (
-			<ReactRouter.Router>
-				<ReactRouter.Route path='/' component={require('../Component.jsx')}>
-				</ReactRouter.Route>
-			</ReactRouter.Router>
-		),
+		routes: require('./routes.jsx'),
 		location: request.url
 	}, function(error, redirectLocation, renderProps) {
 		if (renderProps) {
